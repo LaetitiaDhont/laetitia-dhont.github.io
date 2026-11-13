@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio – Administration systèmes & réseaux</title>
+<meta name="description" content="Formation DesCodeuses en administration systèmes et réseaux (805 h). Issue de l’audiovisuel et formée au développement. Recherche de stage à partir de mai 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F8; --card:#FAFBFE; --ink:#2B3347; --muted:#5B6478; --line:#D3D9E8; --link:#3F52A3;
+  --p-blue:#C5CEF0; --p-mint:#C4E5D8; --p-peach:#F6D5C7; --p-lilac:#DDD0F0;
+  --cable1:#8E9DDB; --cable2:#7CC4AB;
+  --display:"Bricolage Grotesque",Georgia,serif; --body:"Figtree",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#1A1F2C; --card:#232A3A; --ink:#E6EAF4; --muted:#AAB3C5; --line:#38425A; --link:#A9B8F2;
+  --p-blue:#3A4670; --p-mint:#2F5448; --p-peach:#6A4A3E; --p-lilac:#4D4170}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--link);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+header.top{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1.25rem 0;border-bottom:1px solid var(--line)}
+header.top strong{font-family:var(--display);font-size:1.15rem}
+nav a{margin-left:1.25rem;color:var(--ink);text-decoration:none;font-weight:500}
+nav a:hover{text-decoration:underline}
+.hero{padding:4.5rem 0 3.5rem}
+.pill{display:inline-block;background:var(--p-mint);color:var(--ink);padding:.35rem .9rem;border-radius:2rem;font-weight:600;font-size:.95rem;margin:0 0 1.25rem}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,6.5vw,4.4rem);line-height:1.05;letter-spacing:-.025em;margin:0 0 1.25rem;max-width:15em}
+.lead{max-width:38rem;color:var(--muted);font-size:1.2rem;margin:0 0 2rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.3rem;border-radius:.4rem;font-weight:600;text-decoration:none;border:2px solid var(--ink);color:var(--ink)}
+.btn.main{background:var(--p-blue);border-color:var(--p-blue)}
+.btn:hover{border-color:var(--link)}
+.patch{margin-top:3rem;width:100%;height:auto;display:block}
+.patch .cable{fill:none;stroke-width:6;stroke-linecap:round;stroke-dasharray:700;stroke-dashoffset:700;animation:plug 1.6s .3s ease-out forwards}
+.patch .cable.b{animation-delay:.9s}
+@keyframes plug{to{stroke-dashoffset:0}}
+.patch text{font:600 15px var(--body);fill:var(--ink)}
+.patch .jack{fill:var(--card);stroke:var(--ink);stroke-width:2}
+.patch .hole{fill:var(--ink)}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.15;letter-spacing:-.015em;margin:0 0 1.5rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.about p{margin:0 0 1rem;max-width:34rem}
+.formation{background:var(--p-lilac);border-radius:.6rem;padding:2rem}
+.formation h3{font-family:var(--display);font-size:1.4rem;margin:0 0 .6rem}
+.formation p{margin:0 0 .8rem;max-width:44rem}
+.formation p:last-child{margin:0}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1rem}
+.skill{background:var(--card);border:1px solid var(--line);border-top:8px solid var(--p-blue);border-radius:.4rem;padding:1.1rem 1.25rem 1.4rem}
+.skill:nth-child(2){border-top-color:var(--p-mint)}
+.skill:nth-child(3){border-top-color:var(--p-peach)}
+.skill:nth-child(4){border-top-color:var(--p-lilac)}
+.skill h3{font-family:var(--display);font-size:1.2rem;margin:0 0 .8rem}
+.skill ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem}
+.skill li{background:var(--bg);border:1px solid var(--line);border-radius:.3rem;padding:.15rem .6rem;font-size:.95rem;font-weight:500}
+.tl{list-style:none;margin:0;padding:0 0 0 1.75rem;border-left:3px solid var(--line)}
+.tl li{position:relative;padding-bottom:1.75rem;max-width:40rem}
+.tl li::before{content:"";position:absolute;left:calc(-1.75rem - 9px);top:.45rem;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--cable1)}
+.tl li.now::before{background:var(--cable2);border-color:var(--cable2)}
+.tl h3{font-family:var(--display);font-size:1.2rem;margin:0}
+.tl p{margin:.2rem 0 0;color:var(--muted)}
+.goal{background:var(--p-peach);border-radius:.6rem;padding:2.25rem;display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:space-between;align-items:center}
+.goal h2{margin:0 0 .5rem}
+.goal p{margin:0;max-width:34rem}
+.contact ul{list-style:none;margin:0;padding:0;display:flex;gap:1.5rem;flex-wrap:wrap}
+.contact a{font-weight:600}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
+@media (max-width:720px){.about{grid-template-columns:1fr}nav a{margin:0 1rem 0 0}.hero{padding-top:3rem}}
+@media (prefers-reduced-motion:reduce){.patch .cable{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <strong><!-- ✏️ Remplacez par votre nom -->Prénom Nom</strong>
+    <nav aria-label="Navigation principale">
+      <a href="#apropos">À propos</a><a href="#formation">Formation</a><a href="#competences">Compétences</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <p class="pill">Recherche un stage à partir de mai 2027</p>
+      <h1>De l’audiovisuel à la machinerie des systèmes et réseaux.</h1>
+      <p class="lead">Formée au développement logiciel (Simplon, BNP Paribas) et expérimentée en création de contenus numériques, je me spécialise dans le déploiement, la sécurisation et la gestion des serveurs. Rigoureuse, je m’appuie sur une double sensibilité Dev/Ops.</p>
+      <div class="btns">
+        <a class="btn main" href="#contact">Me contacter</a>
+        <a class="btn" href="#competences">Voir mes compétences</a>
+      </div>
+
+      <svg class="patch" viewBox="0 0 900 150" role="img" aria-label="Trois prises reliées par des câbles : audiovisuel, développement, systèmes et réseaux">
+        <path class="cable" stroke="var(--cable1)" d="M150 70 C 230 150, 330 150, 450 70"/>
+        <path class="cable b" stroke="var(--cable2)" d="M450 70 C 570 150, 670 150, 750 70"/>
+        <g><circle class="jack" cx="150" cy="70" r="26"/><circle class="hole" cx="150" cy="70" r="9"/><text x="150" y="25" text-anchor="middle">Audiovisuel</text></g>
+        <g><circle class="jack" cx="450" cy="70" r="26"/><circle class="hole" cx="450" cy="70" r="9"/><text x="450" y="25" text-anchor="middle">Développement</text></g>
+        <g><circle class="jack" cx="750" cy="70" r="26"/><circle class="hole" cx="750" cy="70" r="9"/><text x="750" y="25" text-anchor="middle">Systèmes &amp; réseaux</text></g>
+      </svg>
+    </div>
+
+    <section id="apropos">
+      <h2>À propos</h2>
+      <div class="about">
+        <div>
+          <p>Après trois ans dans la création audiovisuelle, j’ai choisi de me tourner vers ce qui m’a toujours fascinée : la machinerie des systèmes et réseaux.</p>
+          <p>Je m’intéresse de près aux pratiques DevOps et à l’automatisation.</p>
+        </div>
+        <div>
+          <p>Ce qui me motive au quotidien : comprendre comment tout est interconnecté, diagnostiquer des pannes et sécuriser des environnements.</p>
+          <p>Je prépare activement mon stage pour mai 2027, afin d’apporter rigueur et curiosité au sein d’une équipe technique terrain.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="formation">
+      <h2>Formation</h2>
+      <div class="formation">
+        <h3>Administration systèmes et réseaux · DesCodeuses</h3>
+        <p>Formation de 805 heures au total, en cours, avec une spécialisation à 100 % dans l’administration des infrastructures : Windows Server, Linux, Active Directory et support N2/N3.</p>
+        <p>Elle complète ma formation au développement logiciel (Simplon, BNP Paribas) et me donne une vision à la fois Dev et Ops.</p>
+      </div>
+    </section>
+
+    <section id="competences">
+      <h2>Compétences clés vues en formation</h2>
+      <div class="skills">
+        <article class="skill"><h3>Systèmes</h3><ul><li>Active Directory / GPO</li><li>Linux Debian / Ubuntu</li><li>Windows Server</li></ul></article>
+        <article class="skill"><h3>Réseaux et sécurité</h3><ul><li>TCP/IP</li><li>DNS</li><li>DHCP</li><li>VLAN</li><li>Pare-feu</li><li>SSH</li><li>VPN</li><li>Supervision Zabbix</li></ul></article>
+        <article class="skill"><h3>Virtualisation et scripts</h3><ul><li>VirtualBox</li><li>Docker</li><li>Bash</li><li>PowerShell</li></ul></article>
+        <article class="skill"><h3>Support et parc</h3><ul><li>Incidents N2/N3</li><li>GLPI</li><li>ITIL</li></ul></article>
+      </div>
+    </section>
+
+    <section id="parcours">
+      <h2>Parcours</h2>
+      <ol class="tl">
+        <!-- ✏️ Ajoutez les années dans chaque <p> si vous le souhaitez -->
+        <li><h3>Création audiovisuelle</h3><p>Trois ans de production de contenus numériques.</p></li>
+        <li><h3>Formation développement logiciel · Simplon, BNP Paribas</h3><p>Premières bases en développement et en logique Dev.</p></li>
+        <li class="now"><h3>Formation administration systèmes et réseaux · DesCodeuses</h3><p>En cours, 805 heures au total.</p></li>
+      </ol>
+    </section>
+
+    <section>
+      <div class="goal">
+        <div>
+          <h2>Stage à partir de mai 2027</h2>
+          <p>Je cherche une équipe technique terrain pour mettre en pratique l’administration, la sécurisation et le support des infrastructures.</p>
+        </div>
+        <a class="btn" href="#contact">Proposer un échange</a>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <ul>
+        <!-- ✏️ Remplacez ces liens par les vôtres -->
+        <li><a href="mailto:votre.email@exemple.fr">votre.email@exemple.fr</a></li>
+        <li><a href="https://www.linkedin.com/in/votre-profil" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/votre-pseudo" rel="noopener">GitHub</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>© 2026 Prénom Nom</footer>
+</div>
+</body>
+</html>
